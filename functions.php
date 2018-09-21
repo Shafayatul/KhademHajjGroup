@@ -26,24 +26,25 @@ function khadem_custom_post_type()
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-post-status', 
-            // 'taxonomies' => array('faq_category'),
+            'taxonomies' => array('faq_category'),
             // 'capability_type' => 'page',
             // 'rewrite' => array( 'slug' => 'Faq' ),
             // 'supports' => array( 'title', 'editor', 'custom-fields' )// if thumbnail needed, then add ",'thumbnail'"
         )
     );
-    register_post_type( 'Umrah Package',                         
+    register_post_type( 'umrah',                         
         array(
             'labels' => array(
-                'name' => __( 'Umrah Package' ),
-                'singular_name' => __( 'Umrah Package' ),
+                'name' => __( 'Umrah' ),
+                'singular_name' => __( 'Umrah' ),
                 'add_new' => __( 'Add New' ),
-                'add_new_item' => __( 'Add New Umrah Package' ),
-                'edit_item' => __( 'Edit Umrah Package' ),
-                'new_item' => __( 'New Umrah Package' ),
-                'view_item' => __( 'View Umrah Package' ),
-                'not_found' => __( 'Sorry, we couldn\'t find the Umrah Package you are looking for.' )
+                'add_new_item' => __( 'Add New Umrah' ),
+                'edit_item' => __( 'Edit Umrah' ),
+                'new_item' => __( 'New Umrah' ),
+                'view_item' => __( 'View Umrah' ),
+                'not_found' => __( 'Sorry, we couldn\'t find the Umrah you are looking for.' )
                 ),
+            'taxonomies' => array('umrah_category'),
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
@@ -54,18 +55,19 @@ function khadem_custom_post_type()
             'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields')
         )
     );
-    register_post_type( 'Hajj Package',                         
+    register_post_type( 'hajj',                         
         array(
             'labels' => array(
-                'name' => __( 'Hajj Package' ),
-                'singular_name' => __( 'Hajj Package' ),
+                'name' => __( 'Hajj' ),
+                'singular_name' => __( 'Hajj' ),
                 'add_new' => __( 'Add New' ),
-                'add_new_item' => __( 'Add New Hajj Package' ),
-                'edit_item' => __( 'Edit Hajj Package' ),
-                'new_item' => __( 'New Hajj Package' ),
-                'view_item' => __( 'View Hajj Package' ),
-                'not_found' => __( 'Sorry, we couldn\'t find the Hajj Package you are looking for.' )
+                'add_new_item' => __( 'Add New Hajj' ),
+                'edit_item' => __( 'Edit Hajj' ),
+                'new_item' => __( 'New Hajj' ),
+                'view_item' => __( 'View Hajj' ),
+                'not_found' => __( 'Sorry, we couldn\'t find the Hajj you are looking for.' )
                 ),
+            'taxonomies' => array('hajj_category'),
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
@@ -76,11 +78,87 @@ function khadem_custom_post_type()
             'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields')
         )
     );
+    register_post_type( 'hotel',                         
+        array(
+            'labels' => array(
+                'name' => __( 'Hotel' ),
+                'singular_name' => __( 'Hotel' ),
+                'add_new' => __( 'Add New' ),
+                'add_new_item' => __( 'Add New Hotel' ),
+                'edit_item' => __( 'Edit Hotel' ),
+                'new_item' => __( 'New Hotel' ),
+                'view_item' => __( 'View Hotel' ),
+                'not_found' => __( 'Sorry, we couldn\'t find the Hotel you are looking for.' )
+                ),
+            'taxonomies' => array('hotel_category'),
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => true,
+            'menu_position' => 6,
+            'has_archive' => true,
+            'hierarchical' => false, 
+            'menu_icon' => 'dashicons-id-alt', 
+            'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
+    register_post_type( 'scheduled_package',                         
+        array(
+            'labels' => array(
+                'name' => __( 'Scheduled Package' ),
+                'singular_name' => __( 'Scheduled Package' ),
+                'add_new' => __( 'Add New' ),
+                'add_new_item' => __( 'Add New Scheduled Package' ),
+                'edit_item' => __( 'Edit Scheduled Package' ),
+                'new_item' => __( 'New Scheduled Package' ),
+                'view_item' => __( 'View Scheduled Package' ),
+                'not_found' => __( 'Sorry, we couldn\'t find the Scheduled Package you are looking for.' )
+                ),
+            'taxonomies' => array('scheduled_package_category'),
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => true,
+            'menu_position' => 7,
+            'has_archive' => true,
+            'hierarchical' => false, 
+            'menu_icon' => 'dashicons-id-alt', 
+            'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
+
+    register_post_type( 'ticket_visa',                         
+        array(
+            'labels' => array(
+                'name' => __( 'Ticket + Visa Package' ),
+                'singular_name' => __( 'Ticket + Visa Package' ),
+                'add_new' => __( 'Add New' ),
+                'add_new_item' => __( 'Add New Ticket + Visa Package' ),
+                'edit_item' => __( 'Edit Ticket + Visa Package' ),
+                'new_item' => __( 'New Ticket + Visa Package' ),
+                'view_item' => __( 'View Ticket + Visa Package' ),
+                'not_found' => __( 'Sorry, we couldn\'t find the Ticket + Visa Package you are looking for.' )
+                ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => true,
+            'menu_position' => 8,
+            'has_archive' => true,
+            'hierarchical' => false, 
+            'menu_icon' => 'dashicons-id-alt', 
+            'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
+
+
+
 }
+
+
+
+
 /**
-* register a custom category for faq
+* register a custom category for custom post type
 */
-function taxonomies_faq() {
+function khadem_register_custom_taxonomy() {
   $labels = array(
     'name'              => _x( 'Faq Categories', 'taxonomy general name' ),
     'singular_name'     => _x( 'Faq Category', 'taxonomy singular name' ),
@@ -99,8 +177,89 @@ function taxonomies_faq() {
     'hierarchical' => true,
   );
   register_taxonomy( 'faq_category', 'Faq', $args );
+
+
+  $labels = array(
+    'name'              => _x( 'Umrah Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Umrah Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Umrah Categories' ),
+    'all_items'         => __( 'All Umrah Categories' ),
+    'parent_item'       => __( 'Parent Umrah Category' ),
+    'parent_item_colon' => __( 'Parent Umrah Category:' ),
+    'edit_item'         => __( 'Edit Umrah Category' ), 
+    'update_item'       => __( 'Update Umrah Category' ),
+    'add_new_item'      => __( 'Add New Umrah Category' ),
+    'new_item_name'     => __( 'New Umrah Category' ),
+    'menu_name'         => __( 'Umrah Categories' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'umrah_category', 'Umrah', $args );
+
+
+  $labels = array(
+    'name'              => _x( 'Hajj Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Hajj Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Hajj Categories' ),
+    'all_items'         => __( 'All Hajj Categories' ),
+    'parent_item'       => __( 'Parent Hajj Category' ),
+    'parent_item_colon' => __( 'Parent Hajj Category:' ),
+    'edit_item'         => __( 'Edit Hajj Category' ), 
+    'update_item'       => __( 'Update Hajj Category' ),
+    'add_new_item'      => __( 'Add New Hajj Category' ),
+    'new_item_name'     => __( 'New Hajj Category' ),
+    'menu_name'         => __( 'Hajj Categories' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'hajj_category', 'Faq', $args );
+
+
+  $labels = array(
+    'name'              => _x( 'Hotel Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Hotel Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Hotel Categories' ),
+    'all_items'         => __( 'All Hotel Categories' ),
+    'parent_item'       => __( 'Parent Hotel Category' ),
+    'parent_item_colon' => __( 'Parent Hotel Category:' ),
+    'edit_item'         => __( 'Edit Hotel Category' ), 
+    'update_item'       => __( 'Update Hotel Category' ),
+    'add_new_item'      => __( 'Add New Hotel Category' ),
+    'new_item_name'     => __( 'New Hotel Category' ),
+    'menu_name'         => __( 'Hotel Categories' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'hotel_category', 'Faq', $args );
+
+
+  $labels = array(
+    'name'              => _x( 'Scheduled Package Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Scheduled Package Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Scheduled Package Categories' ),
+    'all_items'         => __( 'All Scheduled Package Categories' ),
+    'parent_item'       => __( 'Parent Scheduled Package Category' ),
+    'parent_item_colon' => __( 'Parent Scheduled Package Category:' ),
+    'edit_item'         => __( 'Edit Scheduled Package Category' ), 
+    'update_item'       => __( 'Update Scheduled Package Category' ),
+    'add_new_item'      => __( 'Add New Scheduled Package Category' ),
+    'new_item_name'     => __( 'New Scheduled Package Category' ),
+    'menu_name'         => __( 'Scheduled Package Categories' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'scheduled_package_category', 'Faq', $args );
+
 }
-add_action( 'init', 'taxonomies_faq', 0 );
+add_action( 'init', 'khadem_register_custom_taxonomy', 0 );
 
 
 
@@ -211,3 +370,12 @@ function wp_bootstrap_pagination( $args = array() ) {
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];
 }
+
+
+
+/**
+* Primary Menu
+*/
+require_once('includes/wp-bootstrap-navwalker.php');
+
+

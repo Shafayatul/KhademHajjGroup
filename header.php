@@ -92,7 +92,21 @@
                             <i class="fa fa-bars menu-mobile-bars"></i>
                         <!-- </span> -->
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <?php
+                        wp_nav_menu( array(
+                            'menu'              => 'header', // match name to yours
+                            'theme_location'    => 'header',
+                            'container'         => 'div', // no need to wrap `wp_nav_menu` manually
+                            'container_class'   => 'collapse navbar-collapse',
+                            'container_id'      => 'navbarResponsive',
+                            'menu_class'        => 'navbar-nav ml-auto',
+                            'fallback_cb'       => false,
+                            'depth'             => 2,
+                            'walker'            => new WP_Bootstrap_Navwalker() // Use different Walker
+                        ));
+                    ?>
+
+<!--                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Home
@@ -119,7 +133,7 @@
                             </li>
 
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </nav>
         </header>
