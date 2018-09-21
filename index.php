@@ -23,15 +23,10 @@
                 <?php endif; ?>
             </div>
             <br>
-
-            <div class="row">
-                <div class="col-xs-6 text-left">
-                    <?php next_posts_link( 'Older posts' ); ?>
-                </div>
-                <div class="col-xs-6 text-right">
-                    <?php previous_posts_link( 'Newer posts' ); ?>
-                </div>
-            </div>            
+            <?php
+              if ( function_exists('wp_bootstrap_pagination') )
+                wp_bootstrap_pagination();
+            ?>         
         </div>
     </section>
 <?php get_footer();?>
