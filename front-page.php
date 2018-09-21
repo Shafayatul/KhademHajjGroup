@@ -339,28 +339,5 @@ Template Name: Home
             <br>
             
         </section>
-    <!-- slider -->
-    <script src="<?php echo get_template_directory_uri(); ?>/src/skdslider.min.js"></script>
-
-    <!-- small slider -->
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/thumbnail-slider.css">
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/thumbnail-slider.js"></script>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function(){
-            jQuery('#home-slider').skdslider({
-              slideSelector: '.slide',
-              delay:5000,
-              animationSpeed:2000,
-              showNextPrev:false,
-              showPlayButton:false,
-              autoSlide:true,
-              animationType:'fading'
-          });
-
-        $('#facebook-like-model').modal('toggle');
-
-        });
-    </script>
         
-<?php get_footer();?>
+<?php include(TEMPLATEPATH.'/home-footer.php');?>
