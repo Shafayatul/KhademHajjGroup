@@ -85,6 +85,7 @@ get_header();
 
 <br />
 <?php
+$message="";
 if(isset($_POST["email"])){
 
     $nonce = $_REQUEST['_wpnonce'];

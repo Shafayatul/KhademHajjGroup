@@ -1,5 +1,29 @@
 <?php
+/**
+* Run while activating the theme
+*/
+add_action('after_switch_theme', 'khadem_theme_activation');
 
+function khadem_theme_activation () {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'quotes';
+
+
+    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $sql = "CREATE TABLE $table_name (
+          id int(11) NOT NULL AUTO_INCREMENT,
+          user_id int(11) DEFAULT NULL,
+          post_id int(11) DEFAULT NULL,
+          detail text DEFAULT NULL,
+          start_date datetime DEFAULT NOW(),
+          PRIMARY KEY id (id)
+        );";
+
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $sql );
+    }
+}
 
 /**
 * Custom Post Type
@@ -27,7 +51,7 @@ function khadem_custom_post_type()
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-post-status', 
             'taxonomies' => array('faq_category'),
-            // 'capability_type' => 'page',
+            'capability_type' => 'post',
             // 'rewrite' => array( 'slug' => 'Faq' ),
             // 'supports' => array( 'title', 'editor', 'custom-fields' )// if thumbnail needed, then add ",'thumbnail'"
         )
@@ -44,6 +68,7 @@ function khadem_custom_post_type()
                 'view_item' => __( 'View Umrah' ),
                 'not_found' => __( 'Sorry, we couldn\'t find the Umrah you are looking for.' )
                 ),
+            'capability_type' => 'post',
             'taxonomies' => array('umrah_category'),
             'public' => true,
             'publicly_queryable' => true,
@@ -67,6 +92,7 @@ function khadem_custom_post_type()
                 'view_item' => __( 'View Hajj' ),
                 'not_found' => __( 'Sorry, we couldn\'t find the Hajj you are looking for.' )
                 ),
+            'capability_type' => 'post',
             'taxonomies' => array('hajj_category'),
             'public' => true,
             'publicly_queryable' => true,
@@ -90,6 +116,7 @@ function khadem_custom_post_type()
                 'view_item' => __( 'View Hotel' ),
                 'not_found' => __( 'Sorry, we couldn\'t find the Hotel you are looking for.' )
                 ),
+            'capability_type' => 'post',
             'taxonomies' => array('hotel_category'),
             'public' => true,
             'publicly_queryable' => true,
@@ -113,6 +140,7 @@ function khadem_custom_post_type()
                 'view_item' => __( 'View Scheduled Package' ),
                 'not_found' => __( 'Sorry, we couldn\'t find the Scheduled Package you are looking for.' )
                 ),
+            'capability_type' => 'post',
             'taxonomies' => array('scheduled_package_category'),
             'public' => true,
             'publicly_queryable' => true,
@@ -137,6 +165,7 @@ function khadem_custom_post_type()
                 'view_item' => __( 'View Ticket + Visa Package' ),
                 'not_found' => __( 'Sorry, we couldn\'t find the Ticket + Visa Package you are looking for.' )
                 ),
+            'capability_type' => 'post',
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
@@ -314,3 +343,8 @@ include('function/admin_agent/index.php');
 */
 
 include('function/admin_customer/index.php');
+/*
+* allow admin to view customer
+*/
+
+include('function/admin_quote/index.php');
