@@ -22,6 +22,9 @@
         <!-- Css For WP -->
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>"/>
 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.0.0.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-migrate-3.0.1.js"></script>
         <title>Khadem Hajj Group</title>
 
         <?php wp_head();?>
