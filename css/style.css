@@ -403,3 +403,17 @@ li.instagram a:hover {
         text-align:center;
     }
 }
+
+
+.round-design{
+    border-radius: 10px;
+    border: 2px solid #f09d02;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #FFF;
+}
+
+.price-tag{
+    font-weight: bold;
+    color: #f09d02;
+}

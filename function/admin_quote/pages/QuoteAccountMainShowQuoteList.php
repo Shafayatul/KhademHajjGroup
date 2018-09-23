@@ -130,7 +130,9 @@ function AllQuoteFunction(){
 						'USER'			=> $user_data->user_nicename,
 						'PHONE'			=> $all_meta_for_user['khadem_contact_number'][0],
 						'EMAIL ADDRESS'	=> $user_data->user_email,
-						'ACTION'      	=> '<a href="'.wp_nonce_url(admin_url('options.php?page=delete-quote-khadem&ID='.$quote_detail->id.''), 'doing_something', 'my_nonce').'" class="button button-primary">Delete</a>'
+						'ACTION'      	=> '
+						<a href="'.wp_nonce_url(admin_url('options.php?page=detail-quote-khadem&ID='.$quote_detail->post_id.''), 'doing_something', 'my_nonce').'" class="button button-primary" >Package</a>
+						<a href="'.wp_nonce_url(admin_url('options.php?page=delete-quote-khadem&ID='.$quote_detail->id.''), 'doing_something', 'my_nonce').'" class="button button-primary">Delete</a>'
 						);
 			}
 			return $data;

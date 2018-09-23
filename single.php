@@ -42,9 +42,12 @@ if(isset($_POST["submit_quote"])){
                     </div>
 
                     <?php if(get_post_type() != "post") : ?>
+                        <br>
+                        <br>
+                        <br>                        
                         <div class="row">
                             <div class="col-xs-12 col-md-6 mx-auto">
-                                <h3>As for quatation for this package</h3>
+                                <h3>Ask for quatation for this package</h3>
 
                                 <?php if($message !="") : ?>
                                     <div class="alert alert-success" style="margin-top:18px;">
@@ -54,6 +57,7 @@ if(isset($_POST["submit_quote"])){
                                 <?php endif; ?>
 
                                 <?php if(is_user_logged_in()) : ?>
+
                                     <form method="post">
                                         <div class="form-group">
                                             <label for="detail" >What you want to know from us</label>

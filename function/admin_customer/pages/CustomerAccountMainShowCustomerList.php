@@ -141,8 +141,7 @@ function AllCustomerFunction(){
 						'EMAIL'  		=> $agent_detail->user_email,
 						'PHONE'			=> $all_meta_for_user['khadem_contact_number'][0],
 						'ADDRESS'			=> $all_meta_for_user['khadem_address'][0],
-						'ACTION'      	=> '<a href="'.wp_nonce_url(admin_url('options.php?page=Quote-Customer-khadem&ID='.$agent_detail->ID.''), 'doing_something', 'my_nonce').'" class="button button-primary">Quotes</a>
-
+						'ACTION'      	=> '
 							<a href="'.wp_nonce_url(admin_url('options.php?page=delete-agent-khadem&ID='.$agent_detail->ID.''), 'doing_something', 'my_nonce').'" class="button button-primary">Delete</a>'
 						);
 			}

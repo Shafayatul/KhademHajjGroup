@@ -50,21 +50,22 @@
                                 <p>Scheduled Tour</p>
                               </div>
                               <ul>
-                                <div>
-                                  <li><span>[01 Aug, 2018] - Tour name or title another word &ndash; <a href="#" class=" btn-gold">Detail</a></span></li>
-                                </div>
-
-                                <div>
-                                  <li><span>[01 Aug, 2018] - Tour name or title another word &ndash; <a href="#" class=" btn-gold">Detail</a></span></li>
-                                </div>
-
-                                <div>
-                                  <li><span>[01 Aug, 2018] - Tour name or title another word &ndash; <a href="#" class=" btn-gold">Detail</a></span></li>
-                                </div>
-
-                                <div>
-                                  <li><span>[01 Aug, 2018] - Tour name or title another word &ndash; <a href="#" class=" btn-gold">Detail</a></span></li>
-                                </div>
+                                <?php
+                                $args = array(
+                                  'post_type'   => 'scheduled_package',
+                                  'post_status' => 'publish',
+                                  'posts_per_page' => -1
+                                 );
+                                 
+                                $scheduled_package = new WP_Query( $args );
+                                ?>
+                                <?php if( $scheduled_package->have_posts() ) : ?>
+                                    <?php while( $scheduled_package->have_posts() ) : $scheduled_package->the_post(); ?>
+                                        <div>
+                                          <li><span>[<?php echo the_field( 'Scheduled-Date' ); ?>] - <?php echo get_the_title(); ?> <a href="<?php the_permalink();?>" class=" btn-gold">Detail</a></span></li>
+                                        </div>
+                                    <?php endwhile; ?>    
+                                <?php endif; ?>
                               </ul>
                             </div>
                         </div>

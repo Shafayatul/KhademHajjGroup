@@ -31,6 +31,30 @@ function khadem_theme_activation () {
 add_action('init', 'khadem_custom_post_type'); // Add our HTML5 Blank Custom Post Type
 function khadem_custom_post_type()
 {
+
+    register_post_type( 'slider',                         
+        array(
+            'labels' => array(
+                'name' => __( 'Slider' ),
+                'singular_name' => __( 'Slider' ),
+                'add_new' => __( 'Add New' ),
+                'add_new_item' => __( 'Add New Slider' ),
+                'edit_item' => __( 'Edit Slider' ),
+                'new_item' => __( 'New Slider' ),
+                'view_item' => __( 'View Slider' ),
+                'not_found' => __( 'Sorry, we couldn\'t find the Slider you are looking for.' )
+                ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => true,
+            'has_archive' => true,
+            'hierarchical' => false, 
+            'menu_icon' => 'dashicons-post-status', 
+            'capability_type' => 'post',
+            'supports' => array( 'title', 'editor', 'thumbnail')
+        )
+    );
+
     register_post_type( 'faq',                         
         array(
             'labels' => array(
@@ -46,7 +70,7 @@ function khadem_custom_post_type()
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
-            'menu_position' => 3,
+            // 'menu_position' => 3,
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-post-status', 
@@ -73,7 +97,7 @@ function khadem_custom_post_type()
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
-            'menu_position' => 4,
+            // 'menu_position' => 4,
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-id-alt', 
@@ -97,7 +121,7 @@ function khadem_custom_post_type()
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
-            'menu_position' => 5,
+            // 'menu_position' => 5,
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-id-alt', 
@@ -121,7 +145,7 @@ function khadem_custom_post_type()
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
-            'menu_position' => 6,
+            // 'menu_position' => 6,
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-id-alt', 
@@ -145,7 +169,7 @@ function khadem_custom_post_type()
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
-            'menu_position' => 7,
+            // 'menu_position' => 7,
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-id-alt', 
@@ -169,7 +193,7 @@ function khadem_custom_post_type()
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => true,
-            'menu_position' => 8,
+            // 'menu_position' => 8,
             'has_archive' => true,
             'hierarchical' => false, 
             'menu_icon' => 'dashicons-id-alt', 
