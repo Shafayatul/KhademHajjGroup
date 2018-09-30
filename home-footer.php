@@ -61,10 +61,13 @@
             <div class="bottom gray-area">
                 <div class="container">
                     <div class="row footer-row-warp">
-                        <div class="col-sm-6 footer-bottom-part-1">
+                        <!-- <div class="col-sm-6 footer-bottom-part-1">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Bismillah Hajj &amp; Umrah" style="height: 57px;">
                         </div>
                         <div class="col-sm-6 footer-bottom-part-2" style="margin: 0 auto;">
+                            © Khadhem Hajj Group
+                        </div> -->
+                        <div class="col-sm-12 footer-bottom-part-2" >
                             © Khadhem Hajj Group
                         </div>
                     </div>                    

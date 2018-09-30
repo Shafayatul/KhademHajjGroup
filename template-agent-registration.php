@@ -168,38 +168,38 @@ if(isset($_POST["email"])){
 
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Name" name="user_name" value="<?php echo $_POST['user_name'];?>" id="username type="text">                                                
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Name', 'khadem');?>" name="user_name" value="<?php echo $_POST['user_name'];?>" id="username type="text">                                                
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Email" name="email" value="<?php echo $_POST['email'];?>" id="fname type="email">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Email', 'khadem');?>" name="email" value="<?php echo $_POST['email'];?>" id="fname type="email">                                    
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Password" name="password" value="<?php echo $_POST['password'];?>" id="password type="password">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Password', 'khadem');?>" name="password" value="<?php echo $_POST['password'];?>" id="password type="password">                                    
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Confirm Password" name="confirm_password" value="<?php echo $_POST['confirm_password'];?>" id="password_confirm type="password">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Confirm Password', 'khadem');?>" name="confirm_password" value="<?php echo $_POST['confirm_password'];?>" id="password_confirm type="password">                                    
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Address" name="address" value="<?php echo $_POST['address'];?>" id="address type="text">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Address', 'khadem');?>" name="address" value="<?php echo $_POST['address'];?>" id="address type="text">                                    
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Contact Number" name="contact_number" value="<?php echo $_POST['contact_number'];?>" id="contact_number type="text">
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Contact Number', 'khadem');?>" name="contact_number" value="<?php echo $_POST['contact_number'];?>" id="contact_number type="text">
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Company Number" name="company" value="<?php echo $_POST['company'];?>" type="text">
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Company', 'khadem');?>" name="company" value="<?php echo $_POST['company'];?>" type="text">
                     </div>
 
                     <?php wp_nonce_field( 'hiddent_csrf_check' );?>
 
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-gold pull-left" type="submit" name="signUpButton">Sign Up</button>
+                            <button class="btn btn-gold pull-left" type="submit" name="signUpButton"><?php echo __('Sign Up', 'khadem');?></button>
                         </div>
                     </div>                    
                 </form> 

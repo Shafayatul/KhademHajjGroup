@@ -133,11 +133,11 @@ get_header();
                     ?>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Email" name="email" value="<?php echo $_POST['email'];?>" id="fname type="email">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Email', 'khadem');?>" name="email" value="<?php echo $_POST['email'];?>" id="fname type="email">                                    
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="Password" name="password" value="<?php echo $_POST['password'];?>" id="password" type="password">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Password', 'khadem');?>" name="password" value="<?php echo $_POST['password'];?>" id="password" type="password">                                    
                     </div>
 
 
@@ -145,7 +145,7 @@ get_header();
 
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-gold pull-left" type="submit" name="Login">Login</button>
+                            <button class="btn btn-gold pull-left" type="submit" name="Login"><?php echo __('Login', 'khadem');?></button>
                         </div>
                     </div>                    
                 </form> 

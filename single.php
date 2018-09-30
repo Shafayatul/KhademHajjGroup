@@ -47,7 +47,7 @@ if(isset($_POST["submit_quote"])){
                         <br>                        
                         <div class="row">
                             <div class="col-xs-12 col-md-6 mx-auto">
-                                <h3>Ask for quatation for this package</h3>
+                                <h3><?php echo __('Ask for quatation for this package', 'khadem');?></h3>
 
                                 <?php if($message !="") : ?>
                                     <div class="alert alert-success" style="margin-top:18px;">

@@ -1,4 +1,9 @@
 <?php
+/*add_action( 'admin_menu', function() {
+    if ( ! current_user_can( 'manage_options' ) && function_exists( 'PLL' ) ) {
+        add_menu_page( __( 'Strings translations', 'polylang' ), __( 'Languages', 'polylang' ), 'edit_pages', 'mlang_strings', array( PLL(), 'languages_page' ), 'dashicons-translation' );
+    }
+} );*/
 /**
  * Load translations for khademhajjtheme
  */
@@ -17,10 +22,12 @@ function add_login_out_item_to_menu( $items, $args ){
     if( is_admin() ||  $args->theme_location != 'header' )
         return $items; 
     $redirect = site_url();
-    if( is_user_logged_in( ) )
+    if( is_user_logged_in( ) ){
         $link = '<a  class="nav-link" href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>';
-
-    return $items.= '<li class="nav-item" class="menu-item menu-item-type-post_type menu-item-object-page nav-item">'. $link . '</li>';
+        return $items.= '<li class="nav-item" class="menu-item menu-item-type-post_type menu-item-object-page nav-item">'. $link . '</li>';
+    }
+    return null;
+    
 }
 add_filter( 'wp_nav_menu_items', 'add_login_out_item_to_menu', 50, 2 );
 

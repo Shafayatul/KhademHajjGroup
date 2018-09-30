@@ -11,7 +11,7 @@ $args = array(
         array(
             'taxonomy' => 'category',
             'field' => 'slug',
-            'terms' => 'ticketvisa'
+            'terms' => 'ticket-visa'
         )
      )
  );

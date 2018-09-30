@@ -5,8 +5,10 @@ Template Name: Home
 ?>
         <div id="home-slider">
             <?php
+            // echo get_locale();
             $args = array(
                 'post_type'   => 'post',
+                'lang' => '',
                 'order' => 'DESC',
                 'post_status' => 'publish',
                 'posts_per_page' => -1,
@@ -18,15 +20,18 @@ Template Name: Home
                     )
                  )
              );
+
+
              
             $slider = new WP_Query( $args );
             ?>
             <?php if( $slider->have_posts() ) : ?>
                 <?php while( $slider->have_posts() ) : $slider->the_post(); ?>
+                    <?php //pll_the_languages( array( 'post_id' => $slider->ID ) ); ?>
                     <div class="slide">
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" />
                         <div class="slide-desc">
-                            <h2><?php echo __(get_the_title(), 'khadem'); ?></h2>
+                            <h2><?php echo get_the_title(); ?></h2>
                             <p><?php echo get_the_content(); ?></p>
                         </div>
                     </div>
@@ -111,7 +116,7 @@ Template Name: Home
             <h6 class="font_6 text-center" >
                 <a href="" target="_self">
                     <span class="home-big-title">
-                        HAJJ PACKAGES
+                        <?php echo __('HAJJ PACKAGES', 'khadem');?>
                     </span>
                 </a>
             </h6>
@@ -172,7 +177,7 @@ Template Name: Home
             <h6 class="font_6 text-center" >
                 <a href="" target="_self">
                     <span class="home-big-title">
-                        Hotels
+                        <?php echo __('Hotel Makkah', 'khadem');?>
                     </span>
                 </a>
             </h6>
@@ -189,7 +194,67 @@ Template Name: Home
                             array(
                                 'taxonomy' => 'category',
                                 'field' => 'slug',
-                                'terms' => 'hotel'
+                                'terms' => 'hotel-makkah'
+                            )
+                         )
+                     );
+
+                
+                     
+                    $hotel = new WP_Query( $args );
+                    ?>
+                    <?php if( $hotel->have_posts() ) : ?>
+                        <?php while( $hotel->have_posts() ) : $hotel->the_post(); ?>
+                            <div class=" col-xs-12 col-sm-6 col-md-4 mx-auto">
+                              <article class="box">
+                                <a href="<?php the_permalink();?>" target="_blank">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Fjords" style="width:100%">
+                                    <div class="text-center title-package-home">
+                                        <span class="span-title"><?php echo get_the_title(); ?></span>  
+                                        <span class="span-sub-title"><?php echo the_field( 'Subtitle-1' ); ?></span>
+                                    </div>
+                                    <div class="details">
+                                        <h4 ><a href="<?php the_permalink();?>"><?php echo the_field( 'Subtitle-2' ); ?></a></h4>
+                                        <p>
+                                            <?php echo the_field( 'Small-Description' ); ?>.<br>
+                                        </p>
+                                        <p>
+                                            <h3 class="price-tag">Price: <?php echo the_field( 'Price' ); ?></h3>
+                                        </p>
+                                        <a href="<?php the_permalink();?>"><button class="btn btn-gold btn-block">See Detail</button></a>
+                                    </div>
+                                </a>
+                              </article>
+                            </div>
+                        <?php endwhile; ?>    
+                    <?php endif; ?>
+                </div>        
+            </div>
+        </section>
+
+
+        <section id="content">
+            <h6 class="font_6 text-center" >
+                <a href="" target="_self">
+                    <span class="home-big-title">
+                        <?php echo __('Hotel Madina', 'khadem');?>
+                    </span>
+                </a>
+            </h6>
+            <div class="container">
+                <div class="row image-box style7">
+                    <?php
+
+                    $args = array(
+                        'post_type'   => 'post',
+                        'order' => 'DESC',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => 'hotel-madina'
                             )
                          )
                      );

@@ -110,11 +110,11 @@
 
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="<?php bloginfo('home');?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="150" height="30" alt="">
-                        <p class="font_9" style="font-size:12px; line-height:1.55em; text-align:left;">
+                    <a class="navbar-brand" href="<?php echo site_url();?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png"  alt="">
+                        <p class="font_9" style="-webkit-margin-after: 0.3em;-webkit-margin-before: 0.3em;font-size:18px; line-height:0em; text-align:left; padding-left: 15px">
                             <span style="font-size:12px;">
-                                <span class="color_15">+923219333305 +923219366661</span>
+                                <span class="color_15"><b><i><?php echo __('A Sister Concern of Khadem Group', 'khadem');?></i></b></span>
                             </span>
                         </p>
                     </a>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadem Hajj Group\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-26 07:22+0000\n"
+"POT-Creation-Date: 2018-09-30 16:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -26,8 +26,20 @@ msgstr ""
 msgid "Customer Registration"
 msgstr ""
 
+#: front-page.php:119
+msgid "HAJJ PACKAGES"
+msgstr ""
+
 #. Name of the template
 msgid "Home"
+msgstr ""
+
+#: front-page.php:240
+msgid "Hotel Madina"
+msgstr ""
+
+#: front-page.php:180
+msgid "Hotel Makkah"
 msgstr ""
 
 #. URI of the theme
@@ -47,7 +59,7 @@ msgstr ""
 msgid "Ticket Visa"
 msgstr ""
 
-#: front-page.php:42
+#: front-page.php:54
 msgid "UMRAH PACKAGES"
 msgstr ""
 
