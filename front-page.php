@@ -2,14 +2,21 @@
 /*
 Template Name: Home
 */
-?> 
-
+?>
         <div id="home-slider">
             <?php
             $args = array(
-              'post_type'   => 'slider',
-              'post_status' => 'publish',
-              'posts_per_page' => -1
+                'post_type'   => 'post',
+                'order' => 'DESC',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field' => 'slug',
+                        'terms' => 'slider'
+                    )
+                 )
              );
              
             $slider = new WP_Query( $args );
@@ -19,7 +26,7 @@ Template Name: Home
                     <div class="slide">
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" />
                         <div class="slide-desc">
-                            <h2><?php echo get_the_title(); ?></h2>
+                            <h2><?php echo __(get_the_title(), 'khadem'); ?></h2>
                             <p><?php echo get_the_content(); ?></p>
                         </div>
                     </div>
@@ -49,10 +56,19 @@ Template Name: Home
 
                     <?php
                     $args = array(
-                      'post_type'   => 'umrah',
-                      'post_status' => 'publish',
-                      'posts_per_page' => -1
+                        'post_type'   => 'post',
+                        'order' => 'DESC',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => 'umrah'
+                            )
+                         )
                      );
+
                      
                     $umrah = new WP_Query( $args );
                     ?>
@@ -105,10 +121,20 @@ Template Name: Home
 
                     <?php
                     $args = array(
-                      'post_type'   => 'hajj',
-                      'post_status' => 'publish',
-                      'posts_per_page' => -1
+                        'post_type'   => 'post',
+                        'order' => 'DESC',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => 'hajj'
+                            )
+                         )
                      );
+
+                   
                      
                     $hajj = new WP_Query( $args );
                     ?>
@@ -153,11 +179,22 @@ Template Name: Home
             <div class="container">
                 <div class="row image-box style7">
                     <?php
+
                     $args = array(
-                      'post_type'   => 'hotel',
-                      'post_status' => 'publish',
-                      'posts_per_page' => -1
+                        'post_type'   => 'post',
+                        'order' => 'DESC',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => 'hotel'
+                            )
+                         )
                      );
+
+                
                      
                     $hotel = new WP_Query( $args );
                     ?>

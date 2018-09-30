@@ -52,6 +52,21 @@
                               <ul>
                                 <?php
                                 $args = array(
+                                    'post_type'   => 'post',
+                                    'order' => 'DESC',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => -1,
+                                    'tax_query' => array(
+                                        array(
+                                            'taxonomy' => 'category',
+                                            'field' => 'slug',
+                                            'terms' => 'scheduled-package'
+                                        )
+                                     )
+                                 );
+
+                                
+                                $args = array(
                                   'post_type'   => 'scheduled_package',
                                   'post_status' => 'publish',
                                   'posts_per_page' => -1

@@ -1,10 +1,19 @@
 <?php /*Template Name: Ticket Visa*/
 ob_start();
 get_header();
+
 $args = array(
-  'post_type'   => 'ticket_visa',
-  'post_status' => 'publish',
-  'posts_per_page' => -1
+    'post_type'   => 'post',
+    'order' => 'DESC',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => 'ticketvisa'
+        )
+     )
  );
  
 $ticket_visa = new WP_Query( $args );
