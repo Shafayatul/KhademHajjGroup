@@ -75,7 +75,19 @@
                             </ul>
                         </div>
                         <div class="top-part-3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/bd.png" > / <img src="<?php echo get_template_directory_uri(); ?>/img/eng.jpg" >
+                            <style>
+                                .lang-item {
+                                    display: inline;
+                                }
+                                .lang-item {
+                                    list-style: none;
+                                }
+                                #access img {
+                                    margin-bottom: 0px;
+                                }
+                            </style>
+                            <?php pll_the_languages(['show_flags' => 1, 'show_names' => 0]); ?>
+
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,33 @@
 <?php
 /**
+ * Load translations for khademhajjtheme
+ */
+function khadem_hajj_group_theme_setup(){
+    load_theme_textdomain('khademhajjtheme', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'khadem_hajj_group_theme_setup');
+
+
+/**
+* Add login/logout link to naviagation menu
+*/
+function add_login_out_item_to_menu( $items, $args ){
+
+    //change theme location with your them location name
+    if( is_admin() ||  $args->theme_location != 'header' )
+        return $items; 
+    $redirect = site_url();
+    if( is_user_logged_in( ) )
+        $link = '<a  class="nav-link" href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>';
+
+    return $items.= '<li class="nav-item" class="menu-item menu-item-type-post_type menu-item-object-page nav-item">'. $link . '</li>';
+}
+add_filter( 'wp_nav_menu_items', 'add_login_out_item_to_menu', 50, 2 );
+
+
+
+
+/**
 * Run while activating the theme
 */
 add_action('after_switch_theme', 'khadem_theme_activation');

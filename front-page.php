@@ -39,7 +39,7 @@ Template Name: Home
             <h6 class="font_6 text-center" >
                 <a href="" target="_self">
                     <span class="home-big-title">
-                        UMRAH PACKAGES
+                        <?php echo __('UMRAH PACKAGES', 'khadem');?>
                     </span>
                 </a>
             </h6>
