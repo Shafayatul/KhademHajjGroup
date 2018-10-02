@@ -123,18 +123,38 @@
                             <i class="fa fa-bars menu-mobile-bars"></i>
                         <!-- </span> -->
                     </button>
+
                     <?php
-                        wp_nav_menu( array(
-                            'menu'              => 'header', // match name to yours
-                            'theme_location'    => 'header',
-                            'container'         => 'div', // no need to wrap `wp_nav_menu` manually
-                            'container_class'   => 'collapse navbar-collapse',
-                            'container_id'      => 'navbarResponsive',
-                            'menu_class'        => 'navbar-nav ml-auto',
-                            'fallback_cb'       => false,
-                            'depth'             => 2,
-                            'walker'            => new WP_Bootstrap_Navwalker() // Use different Walker
-                        ));
+                       if(pll_current_language() == 'en'){
+
+                            wp_nav_menu( array(
+                                'menu'              => 'header menu en', // match name to yours
+                                'theme_location'    => 'header menu en',
+                                'container'         => 'div', // no need to wrap `wp_nav_menu` manually
+                                'container_class'   => 'collapse navbar-collapse',
+                                'container_id'      => 'navbarResponsive',
+                                'menu_class'        => 'navbar-nav ml-auto',
+                                'fallback_cb'       => false,
+                                'depth'             => 4,
+                                'walker'            => new WP_Bootstrap_Navwalker() // Use different Walker
+                            ));
+
+                        }else{
+                            wp_nav_menu( array(
+                                'menu'              => 'header menu bd', // match name to yours
+                                'theme_location'    => 'header menu bd',
+                                'container'         => 'div', // no need to wrap `wp_nav_menu` manually
+                                'container_class'   => 'collapse navbar-collapse',
+                                'container_id'      => 'navbarResponsive',
+                                'menu_class'        => 'navbar-nav ml-auto',
+                                'fallback_cb'       => false,
+                                'depth'             => 4,
+                                'walker'            => new WP_Bootstrap_Navwalker() // Use different Walker
+                            ));
+                        }
+
+
+
                     ?>
 
 <!--                     <div class="collapse navbar-collapse" id="navbarResponsive">

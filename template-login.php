@@ -85,6 +85,7 @@ get_header();
 
 <br />
 <?php
+  $message = '';
   if(isset($_POST["Login"])){  
 
     $password  = esc_attr($_POST["password"]);
@@ -133,11 +134,11 @@ get_header();
                     ?>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Email', 'khadem');?>" name="email" value="<?php echo $_POST['email'];?>" id="fname type="email">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Email', 'khadem');?>" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>" id="fname type="email">                                    
                     </div>
 
                     <div class="input-group margin-bottom-20">
-                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Password', 'khadem');?>" name="password" value="<?php echo $_POST['password'];?>" id="password" type="password">                                    
+                        <input required="required" size="60" maxlength="255" class="form-control" placeholder="<?php echo __('Password', 'khadem');?>" name="password" value="" id="password" type="password">                                    
                     </div>
 
 

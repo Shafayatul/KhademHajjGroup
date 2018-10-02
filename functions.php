@@ -1,9 +1,17 @@
 <?php
-/*add_action( 'admin_menu', function() {
-    if ( ! current_user_can( 'manage_options' ) && function_exists( 'PLL' ) ) {
-        add_menu_page( __( 'Strings translations', 'polylang' ), __( 'Languages', 'polylang' ), 'edit_pages', 'mlang_strings', array( PLL(), 'languages_page' ), 'dashicons-translation' );
+/**
+* show admin bar to only admin
+*/
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
     }
-} );*/
+}
+
+
+
+
 /**
  * Load translations for khademhajjtheme
  */
@@ -18,15 +26,29 @@ add_action('after_setup_theme', 'khadem_hajj_group_theme_setup');
 */
 function add_login_out_item_to_menu( $items, $args ){
 
-    //change theme location with your them location name
-    if( is_admin() ||  $args->theme_location != 'header' )
-        return $items; 
-    $redirect = site_url();
-    if( is_user_logged_in( ) ){
-        $link = '<a  class="nav-link" href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>';
-        return $items.= '<li class="nav-item" class="menu-item menu-item-type-post_type menu-item-object-page nav-item">'. $link . '</li>';
+    if(pll_current_language() == 'en'){
+
+        if( is_admin() ||  $args->theme_location != 'header menu en' )
+            return $items; 
+        $redirect = site_url();
+        if( is_user_logged_in( ) ){
+            $link = '<a  class="nav-link" href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout', 'khadem' ) .'">' . __( 'Logout', 'khadem' ) . '</a>';
+            return $items.= '<li class="nav-item" class="menu-item menu-item-type-post_type menu-item-object-page nav-item">'. $link . '</li>';
+        }else{
+            return $items;
+        }       
+         
+    }else{
+        if( is_admin() ||  $args->theme_location != 'header menu bd' )
+            return $items; 
+        $redirect = site_url();
+        if( is_user_logged_in( ) ){
+            $link = '<a  class="nav-link" href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout', 'khadem' ) .'">' . __( 'Logout', 'khadem' ) . '</a>';
+            return $items.= '<li class="nav-item" class="menu-item menu-item-type-post_type menu-item-object-page nav-item">'. $link . '</li>';
+        }else{
+            return $items;
+        }      
     }
-    return null;
     
 }
 add_filter( 'wp_nav_menu_items', 'add_login_out_item_to_menu', 50, 2 );
@@ -87,7 +109,7 @@ if (function_exists('add_theme_support'))
 }
 
 
-
+/***/
 
 
 /**
